@@ -1,0 +1,15 @@
+version: "2"
+cloud:
+
+sql:
+  - schema: "schema.sql"
+    queries: "query.sql"
+    engine: "postgresql"
+    database:
+      uri: postgresql://postgres:${01090679369}@localhost:5432/postgres
+    gen:
+      go:
+        package: "db"
+        out: "db"
+        json_tags_id_uppercase: True
+        json_tags_case_style: "none"
